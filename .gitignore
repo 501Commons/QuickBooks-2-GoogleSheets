@@ -6,8 +6,6 @@ Import/
 Incoming/
 status/
 *.properties
-key.txt
-importer.bat
 *.csv
 ~*
 APEX.db

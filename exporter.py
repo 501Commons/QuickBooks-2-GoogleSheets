@@ -124,8 +124,16 @@ def import_googlesheets(exporter_directory, client_type, salesforce_type):
     df = pd.DataFrame([('a', 1.3), ('b', 2.7), ('c', 3.9)], columns=['letter', 'number'])
 
     client = datasheets.Client()
-    workbook = client.create_workbook('my_new_workbook')
-    tab = workbook.create_tab('my_new_tab')
+    workbook = client.fetch_workbook('QuickBooksSample')
+    if workbook is None:
+        workbook = client.create_workbook('QuickBooksSample')
+    
+    tab_names = workbook.fetch_tab_names()
+    if not 'QuickBooks-Export' in tab_names.values:
+        tab = workbook.create_tab('QuickBooks-Export')
+    else:
+        tab = workbook.fetch_tab('QuickBooks-Export')
+        tab.clear_data()
 
     # Upload a data set
     tab.insert_data(df, index=False)

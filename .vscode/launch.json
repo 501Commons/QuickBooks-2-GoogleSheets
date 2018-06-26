@@ -10,8 +10,6 @@
             "request": "launch",
             "program": "${file}",
             "env": {
-                "DATASHEETS_SECRETS_PATH": "C:\\repo\\QuickBooks-2-GoogleSheets\\Clients\\OPS\\QuickBooks-2-GoogleSheets\\Clients\\OPS\\.datasheets",
-                "DATASHEETS_SERVICE_PATH": "C:\\repo\\QuickBooks-2-GoogleSheets\\Clients\\OPS\\QuickBooks-2-GoogleSheets\\Clients\\OPS\\.datasheets",
             },
             "args": [
                 "Prod"
