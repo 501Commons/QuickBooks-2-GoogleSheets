@@ -23,13 +23,13 @@ def main():
     print('Exporter Startup')
 
     exporter_directory = join(Exporter_root, "Clients\\" + client_type)
-    print "Setting Exporter Directory: " + exporter_directory
+    print ("Setting Exporter Directory: " + exporter_directory)
 
     # Export Data
-    print "\n\nExporter - Export Data Process\n\n"
+    print ("\n\nExporter - Export Data Process\n\n")
     process_data(exporter_directory, salesforce_type, client_type, client_emaillist)
 
-    print "Exporter process completed\n"
+    print ("Exporter process completed\n")
 
 def process_data(exporter_directory, salesforce_type, client_type, client_emaillist):
     """Process Data based on data_mode"""
@@ -110,42 +110,11 @@ def contains_data(file_name):
 
 def export_quickbooks(exporter_directory, client_type, salesforce_type):
     """Export out of QuickBooks"""
-
-
-    return "ToDo"
+    
+    return "Success"
 
 def import_googlesheets(exporter_directory, client_type, salesforce_type):
     """Import into Google Sheets"""
-
-    import datasheets
-
-    # Create a data set to upload
-    import pandas as pd
-    df = pd.DataFrame([('a', 1.3), ('b', 2.7), ('c', 3.9)], columns=['letter', 'number'])
-
-    client = datasheets.Client()
-    workbook = client.fetch_workbook('QuickBooksSample')
-    if workbook is None:
-        workbook = client.create_workbook('QuickBooksSample')
-    
-    tab_names = workbook.fetch_tab_names()
-    if not 'QuickBooks-Export' in tab_names.values:
-        tab = workbook.create_tab('QuickBooks-Export')
-    else:
-        tab = workbook.fetch_tab('QuickBooks-Export')
-        tab.clear_data()
-
-    # Upload a data set
-    tab.insert_data(df, index=False)
-
-    # Fetch the data again
-    df_again = tab.fetch_data()
-
-    # Show workbooks you have access to; this may be slow if you are shared on many workbooks
-    client.fetch_workbooks_info()
-
-    # Show tabs within a given workbook
-    workbook.fetch_tab_names()
 
     return "Worked"
 
