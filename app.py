@@ -10,8 +10,6 @@ from uuid import uuid4
 import requests
 import requests.auth
 import urllib
-CLIENT_ID = 'Q0pe6YvYiaUjA2Yv1CqS1wJkEHqNr3paQSNxlo9gRicpkf3W09'
-CLIENT_SECRET = '9Z2W4t81Vr8mTxLM04av9MOAyOsJBUVCYBR1JbnU'
 REDIRECT_URI = "http://localhost:8000/qbo_callback"
 
 app = Flask(__name__)
